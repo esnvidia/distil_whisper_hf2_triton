@@ -1,6 +1,6 @@
 # distil_whisper_hf2_triton
 
-Steps:
+# Steps:
 
 ```bash
 git clone https://github.com/esnvidia/distil_whisper_hf2_triton.git
@@ -14,14 +14,17 @@ docker run --name distil_whisper_triton --rm -it --gpus all --net host  -v `pwd`
 
 Inside the container:
 
+```bash
 cd /workspace
+```
+
 # save the HF model
 ```bash
 python save_distil_whisper_from_hf.py
 ```
-# following many of the same steps here: https://github.com/NVIDIA/TensorRT-LLM/tree/main/examples/whisper#distil-whisper
+# Following many of the same steps [here](https://github.com/NVIDIA/TensorRT-LLM/tree/main/examples/whisper#distil-whisper):
 
-# convert the model from .bin to .pt
+# Convert the model from .bin to .pt
 ```
 python TensorRT-LLM/examples/whisper/distil_whisper/convert_from_distil_whisper.py --model_name ./distil-whisper/distil-large-v2 --cache_dir ./distil-whisper/distil-large-v2/ --output_dir ./assets/ --output_name distil-large-v2
 ```
@@ -51,7 +54,7 @@ tritonserver --model-repository model_repo_whisper_trtllm/
 
 ```
 
-# from another terminal
+# From another terminal
 
 ```
 docker exec -it distil_whisper_triton bash
