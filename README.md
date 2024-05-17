@@ -34,7 +34,7 @@ python TensorRT-LLM/examples/whisper/distil_whisper/convert_from_distil_whisper.
 
 ``` 
 output_dir=distil_whisper_large_v2
-/workspace# python TensorRT-LLM/examples/whisper/build.py --model_name distil-large-v2 --output_dir $output_dir --dtype float16 --enable_context_fmha --use_gpt_attention_plugin --use_gemm_plugin --use_bert_attention_plugin float16
+python TensorRT-LLM/examples/whisper/build.py --model_name distil-large-v2 --output_dir $output_dir --dtype float16 --enable_context_fmha --use_gpt_attention_plugin --use_gemm_plugin --use_bert_attention_plugin float16
 ```
 # Test (Long running, feel free to skip)
 ```
@@ -43,8 +43,8 @@ python run.py --engine_dir $output_diry --name librispeech_dummy_output --tokeni
 
 #create model repo with Python Backend (sherpa)
 ```
-cp -r distil_whisper_large_v2/ moel_repo_whisper_trtllm/whisper/1/
-cp -r model_repo_whisper_trtllm ./sherpa/triton/whisper/model_repo_whisper_trtllm
+cp -r distil_whisper_large_v2/ model_repo_whisper_trtllm/whisper/1/
+cp -r model_repo_whisper_trtllm ./sherpa/triton/whisper/
 ```
 
 # Run Triton Server
