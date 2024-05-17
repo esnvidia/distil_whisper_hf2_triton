@@ -9,7 +9,7 @@ cd  distil_whisper_hf2_triton
 
 docker build -t distil_whisper_hf2_triton -f Dockerfile .
 
-docker run --rm -it --gpus all --net host  -v `pwd`:/workspace distil_whisper_hf2_triton bash
+docker run --name distil_whisper_triton --rm -it --gpus all --net host  -v `pwd`:/workspace distil_whisper_hf2_triton bash
 ```
 
 Inside the container:
@@ -39,7 +39,8 @@ python run.py --engine_dir $output_diry --name librispeech_dummy_output --tokeni
 
 #create model repo with Python Backend (sherpa)
 ```
-cp -r distil_whisper_large_v2/ sherpa/triton/whisper/model_repo_whisper_trtllm/whisper/1/
+cp -r distil_whisper_large_v2/ moel_repo_whisper_trtllm/whisper/1/
+cp -r model_repo_whisper_trtllm ./sherpa/triton/whisper/model_repo_whisper_trtllm
 ```
 
 # Run Triton Server
