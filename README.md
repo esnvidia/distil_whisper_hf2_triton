@@ -6,6 +6,7 @@
 git clone https://github.com/esnvidia/distil_whisper_hf2_triton.git
 
 cd  distil_whisper_hf2_triton
+git submodule update --init --recursive
 
 docker build -t distil_whisper_hf2_triton -f Dockerfile .
 
