@@ -1,0 +1,9 @@
+[submodule "TensorRT-LLM"]
+	path = TensorRT-LLM
+	url = https://github.com/NVIDIA/TensorRT-LLM/tree/main
+[submodule "sherpa"]
+	path = sherpa
+	url = https://github.com/k2-fsa/sherpa/tree/master
+[submodule "Triton-ASR-Client"]
+	path = Triton-ASR-Client
+	url = https://github.com/yuekaizhang/Triton-ASR-Client/tree/main
