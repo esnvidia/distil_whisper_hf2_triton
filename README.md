@@ -42,7 +42,7 @@ cd TensorRT-LLM/examples/whisper/
 python run.py --engine_dir /workspace/$output_dir --name librispeech_dummy_output --tokenizer_name multilingual --assets_dir ./assets/ --dataset librispeech_asr --results_dir ./results
 ```
 
-#create model repo with Python Backend (sherpa)
+# Create model repo with Python Backend (sherpa)
 ```
 cp -r distil_whisper_large_v2/ model_repo_whisper_trtllm/whisper/1/
 cp -r model_repo_whisper_trtllm ./sherpa/triton/whisper/
