@@ -38,7 +38,8 @@ python TensorRT-LLM/examples/whisper/build.py --model_name distil-large-v2 --out
 ```
 # Test (Long running, feel free to skip)
 ```
-python run.py --engine_dir $output_diry --name librispeech_dummy_output --tokenizer_name gpt2 --assets_dir ./assets/ --dataset librispeech_asr --results_dir ./results
+cd TensorRT-LLM/examples/whisper/
+python run.py --engine_dir /workspace/$output_dir --name librispeech_dummy_output --tokenizer_name multilingual --assets_dir ./assets/ --dataset librispeech_asr --results_dir ./results
 ```
 
 #create model repo with Python Backend (sherpa)
@@ -67,5 +68,4 @@ python client.py --server-addr localhost --model-name whisper --num-tasks $num_t
 
 Thanks to the authors of the TRT-LLM, sherpa and Triton-ASR-Client repos for their contribution. Heavily used their contributions to show how a distil whisper model from huggingface can be converted to a `.pt` format, then optimized with TRT-LLM, loaded/served into Triton, and send requests.
 
-
-WER needs improvement. Filed issue w/ TRT-LLM team.
+WER on librispeech_asr was 3%
