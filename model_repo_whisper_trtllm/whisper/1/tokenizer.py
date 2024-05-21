@@ -122,7 +122,7 @@ LANGUAGES = {
 }
 
 
-def get_tokenizer(name: str = "gpt2",
+def get_tokenizer(name: str = "multilingual",
                   num_languages: int = 99,
                   tokenizer_dir: str = None):
     if tokenizer_dir is None:
